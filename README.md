@@ -1,20 +1,29 @@
-# :train2::train2::train2: Subway Shanghai
+﻿# :train2::train2::train2: 成都地铁线路图
 
-The before vesion is based on native js. With the increse of the size of the code, the code become messy. Therefore, the new version is implemented on the basis of [create-react-app](https://github.com/facebook/create-react-app).
+删除了我不需要的数据功能,增加了表单,以及最短的路径的计算
 
-## Component structure
+* 单击线路隐藏其他线路
+* 单击站点弹出卡片
+* 双击SVG或指定按钮复原
+* 数据量太大,只做了很小一部分
+* 练习react为主,数据不精确
 
-The whole map can be seen as a Map component, and deivde it into 4 child components:
+## 组件结构
 
-![map](https://camo.githubusercontent.com/5491a1b2fcde37cc7dc78ca4890b16316ae5d87d/687474703a2f2f6f7a666f346a6a78622e626b742e636c6f7564646e2e636f6d2f6d61702e706e67)
+将整个地图理解成一个 Map 组件，再将其分为 4 个小组件：
 
-* Label: The text infomation of the map, including station name and line name
-* Station: Station, including normal station and transfer station
-* Line: Subway line
-* InfoCard: The most complex component, including timesheet, washroom position information, entrance infomation and elevator information
+![map.png](http://ozfo4jjxb.bkt.clouddn.com/map.png)
 
-![subway-react](https://user-images.githubusercontent.com/12164075/37656324-ace5c2b2-2c82-11e8-8b6a-b3c96e091c73.gif)
-
+* Label: 地图上的文本信息，包括地铁站名，线路名称
+* Station: 地铁站点，包括普通站点和中转站点
+* Line： 地铁线路
+* SubwayForm: 表单,实现了双向绑定
+* InfoCard: 弹出的卡片,目前只能设置起始站和终点站
 
 ## LICENSE
+
 [MIT](https://github.com/neal1991/subway-shanghai/blob/master/LICENSE.md)
+
+
+
+
