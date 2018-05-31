@@ -95,11 +95,13 @@ export default class SubwayForm extends React.Component {
                     <code>起始站</code>
                     <SelcetLine onLineChange={this.handleLineStartChange} name="lineStart" line={this.props.lineStart} />
                     <SelcetStation onStaionChange={this.handleStaionStartChange} name="stationStart" stations={lineStartStations} station={this.props.stationStart} />
+                    <br />                    
                     <code>终点站</code>
                     <SelcetLine onLineChange={this.handleLineEndChange} name="lineEnd" line={this.props.lineEnd} />
                     <SelcetStation onStaionChange={this.handleStaionEndChange} name="stationEnd" stations={lineEndStaions} station={this.props.stationEnd} />
-                    <input className="btn btn-info" type="submit" />
-                    {text}                                    
+                    <br />                    
+                    {text}
+                    <input className="btn btn-info" type="submit" />                                                        
                 </form>
             </div>
         )

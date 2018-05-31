@@ -4,6 +4,7 @@ import SubwayForm from './SubwayForm';
 import asyncStation from './Station';
 import asyncLabel from './Label';
 import InfoCard from './InfoCard';
+import AlloyFinger from './AlloyFinger';
 import linelist from '../data/linelist.json';
 
 const Station = asyncStation(() => import('./Station'))
@@ -37,7 +38,6 @@ class Map extends React.Component {
     this.handleLineEndChange = this.handleLineEndChange.bind(this);
     this.handleStaionStartChange = this.handleStaionStartChange.bind(this);
     this.handleStaionEndChange = this.handleStaionEndChange.bind(this);
-
   }
 
   handleToDefault(e) {
@@ -111,7 +111,7 @@ class Map extends React.Component {
 
   render() {
     return (
-      <div className="map" onDoubleClick={this.handleToDefault}>
+      <div className="map">
         <SubwayForm
           lineStart={this.state.lineStart}
           lineEnd={this.state.lineEnd}
@@ -130,12 +130,20 @@ class Map extends React.Component {
           onStaionStartChange={this.handleStaionStartChange}
           onStaionEndChange={this.handleStaionEndChange}
         />
-        <svg className="svg" viewBox="0 0 2500 2500" autoFocus>
-          <Line />
-          <Label />
-          <Station onStaionFocusChange={this.handleStaionFocusChange} />
-        </svg>
+        {/* 调用腾讯的触控API 让SVG可以实现触控功能 */}
+        <AlloyFinger onDoubleTap={this.handleToDefault}>
+          <svg className="svg"
+            viewBox="0 0 2500 2500"
+            autoFocus
+            onDoubleClick={this.handleToDefault}                        
+          >
+            <Line />
+            <Label />
+            <Station onStaionFocusChange={this.handleStaionFocusChange} />
+          </svg>
+        </AlloyFinger>
       </div>
+
     )
   }
 }

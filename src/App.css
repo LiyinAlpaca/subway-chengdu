@@ -1,10 +1,3 @@
-.svg {
-    font-size: 12px;
-    font-family: 微软雅黑;
-    width: 100%;
-    /* transform: translateX(-200px) translateY(-300px); */
-}
-
 .line {
     font-size: 32px;
 }
@@ -18,7 +11,28 @@
     color: #333;
 }
 
+.svg {
+    position: relative;
+    font-size: 12px;
+    font-family: 微软雅黑;
+    width: 100%;
+    min-height: 100%;
+    margin-top: 152px;
+}
+
+.info-card {
+    z-index: 5;
+}
+
 .form-subway {
-  position: fixed;
-  width: 100%;
+    position: fixed;
+    width: 100%;
+    z-index: 100;
+}
+
+@media screen and (max-width: 550px) {
+    .svg {
+        width: 1000px;
+        height: 1000px;
+    }
 }
