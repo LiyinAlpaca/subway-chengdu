@@ -24,7 +24,7 @@ export default function asyncStation(importComponent) {
           <circle
             onClick={this.handleClick}
             className="station" line={station.line}
-            cx={station.cx} cy={station.cy} r="8" fill="white"
+            cx={station.cx} cy={station.cy} r="16" fill="white"
             stroke={station.stroke} id={station.id} statid={station.statid}
             key={station.id + i}
           />

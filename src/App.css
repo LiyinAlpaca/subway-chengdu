@@ -1,5 +1,6 @@
 .line {
     font-size: 32px;
+    opacity: 1;
 }
 
 .line1 {
@@ -17,7 +18,7 @@
     font-family: 微软雅黑;
     width: 100%;
     min-height: 100%;
-    margin-top: 152px;
+    padding-top: 152px;
 }
 
 .info-card {

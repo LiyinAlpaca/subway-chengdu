@@ -22,6 +22,11 @@ class Map extends React.Component {
           y: 0
         }
       },
+      svg: {
+        scale: 1,
+        x: 0,
+        y: 0
+      },
       lineStart: $_get("lineStart") || 1,
       lineEnd: $_get("lineEnd") || 1,
       stationStart: $_get("stationStart") || linelist.find((line) => {
@@ -38,6 +43,8 @@ class Map extends React.Component {
     this.handleLineEndChange = this.handleLineEndChange.bind(this);
     this.handleStaionStartChange = this.handleStaionStartChange.bind(this);
     this.handleStaionEndChange = this.handleStaionEndChange.bind(this);
+    this.handlePinch = this.handlePinch.bind(this);
+    this.handlePressMove = this.handlePressMove.bind(this);
   }
 
   handleToDefault(e) {
@@ -46,16 +53,18 @@ class Map extends React.Component {
     const stations = document.getElementsByClassName('station');
     const labels = document.getElementsByClassName('label');
 
+    const linesStyle = "opacity : 1;event-pointers : none";
+
     for (let i = 0; i < lines.length; i++) {
-      lines[i].style.display = "inline";
+      lines[i].style.cssText = linesStyle;
     };
 
     for (let i = 0; i < stations.length; i++) {
-      stations[i].style.display = "inline";
+      stations[i].style.cssText = linesStyle;
     };
 
     for (let i = 0; i < labels.length; i++) {
-      labels[i].style.display = "inline";
+      labels[i].style.cssText = linesStyle;
     };
 
     this.setState({
@@ -109,7 +118,37 @@ class Map extends React.Component {
     this.setState({ stationEnd: staion })
   }
 
+
+  handlePinch(e) {
+    //缩放触控
+    let scale = (e.scale + this.state.svg.scale) / 2;
+    let x = this.state.svg.x;
+    let y = this.state.svg.y;
+
+    if (scale > 5) {
+      scale = 5
+    } else if (scale < 0.5) {
+      scale = 0.5
+    }
+
+    this.setState({ svg: { scale, x, y } });
+  }
+
+  handlePressMove(e) {
+    //拖拽触控
+    let scale = this.state.svg.scale;
+    let x = this.state.svg.x + e.deltaX;
+    let y = this.state.svg.y + e.deltaY;
+    this.setState({ svg: { scale, x, y } });
+  }
   render() {
+    let svgStyle = {
+      'transform':
+        'scale(' + this.state.svg.scale + ') '
+        + 'translate('
+        + this.state.svg.x + 'px,'
+        + this.state.svg.y + 'px)',
+    }
     return (
       <div className="map">
         <SubwayForm
@@ -130,12 +169,17 @@ class Map extends React.Component {
           onStaionStartChange={this.handleStaionStartChange}
           onStaionEndChange={this.handleStaionEndChange}
         />
-        {/* 调用腾讯的触控API 让SVG可以实现触控功能 */}
-        <AlloyFinger onDoubleTap={this.handleToDefault}>
+        {/* 调用腾讯的触控API 可以实现触控功能 */}
+        <AlloyFinger
+          onDoubleTap={this.handleToDefault}
+          onPinch={this.handlePinch}
+          onPressMove={this.handlePressMove}
+        >
           <svg className="svg"
             viewBox="0 0 2500 2500"
             autoFocus
-            onDoubleClick={this.handleToDefault}                        
+            onDoubleClick={this.handleToDefault}
+            style={svgStyle}
           >
             <Line />
             <Label />

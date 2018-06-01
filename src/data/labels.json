@@ -6,97 +6,97 @@
         "line": 1,
         "className": "line line1"
     },{
-        "x": "910",
+        "x": "900",
         "y": "210",
         "text": "韦家碾",
         "line": 1,
         "className": "station"
     },{
-        "x": "910",
+        "x": "900",
         "y": "360",
         "text": "升仙湖",
         "line": 1,
         "className": "station"
     },{
-        "x": "890",
+        "x": "880",
         "y": "480",
         "text": "火车北站",
         "line": 1,
         "className": "station"
     },{
-        "x": "890",
+        "x": "880",
         "y": "610",
         "text": "人民北路",
         "line": 1,
         "className": "station"
     },{
-        "x": "910",
+        "x": "900",
         "y": "710",
         "text": "文殊院",
         "line": 1,
         "className": "station"
     },{
-        "x": "910",
+        "x": "900",
         "y": "810",
         "text": "骡马市",
         "line": 1,
         "className": "station"
     },{
-        "x": "1010",
+        "x": "1030",
         "y": "890",
         "text": "天府广场",
         "line": 1,
         "className": "station"
     },{
-        "x": "890",
+        "x": "880",
         "y": "975",
         "text": "锦江广场",
         "line": 1,
         "className": "station"
     },{
-        "x": "910",
+        "x": "900",
         "y": "1040",
         "text": "华西坝",
         "line": 1,
         "className": "station"
     },{
-        "x": "890",
+        "x": "880",
         "y": "1105",
         "text": "省体育馆",
         "line": 1,
         "className": "station"
     },{
-        "x": "910",
+        "x": "900",
         "y": "1170",
         "text": "倪家桥",
         "line": 1,
         "className": "station"
     },{
-        "x": "910",
+        "x": "900",
         "y": "1240",
         "text": "桐枔林",
         "line": 1,
         "className": "station"
     },{
-        "x": "890",
+        "x": "880",
         "y": "1290",
         "text": "火车南站",
         "line": 1,
         "className": "station"
     },{
-        "x": "940",
+        "x": "930",
         "y": "1365",
         "text": "高新",
         "line": 1,
         "className": "station"
     },{
-        "x": "910",
+        "x": "900",
         "y": "1420",
         "text": "金融城",
         "line": 1,
         "className": "station"
     },{
-        "x": "910",
+        "x": "900",
         "y": "1475",
         "text": "孵化园",
         "line": 1,
@@ -108,110 +108,110 @@
         "line": 1,
         "className": "station"
     },{
-        "x": "910",
+        "x": "900",
         "y": "1590",
         "text": "世纪城",
         "line": 1,
         "className": "station"
     },{
-        "x": "890",
+        "x": "880",
         "y": "1645",
         "text": "天府三街",
         "line": 1,
         "className": "station"
     },{
-        "x": "890",
+        "x": "880",
         "y": "1700",
         "text": "天府五街",
         "line": 1,
         "className": "station"
     },{
-        "x": "890",
+        "x": "880",
         "y": "1755",
         "text": "华府大道",
         "line": 1,
         "className": "station"
     },{
         "x": "1025",
-        "y": "1830",
+        "y": "1840",
         "text": "四河",
         "line": 1,
         "className": "station"
     },{
         "x": "1125",
-        "y": "1830",
+        "y": "1840",
         "text": "华阳",
         "line": 1,
         "className": "station"
     },{
         "x": "1213",
-        "y": "1830",
+        "y": "1840",
         "text": "海昌路",
         "line": 1,
         "className": "station"
     },{
         "x": "1325",
-        "y": "1830",
+        "y": "1840",
         "text": "广福",
         "line": 1,
         "className": "station"
     },{
         "x": "1400",
-        "y": "1830",
+        "y": "1840",
         "text": "红石公园",
         "line": 1,
         "className": "station"
     },{
         "x": "1525",
-        "y": "1830",
+        "y": "1840",
         "text": "麓湖",
         "line": 1,
         "className": "station"
     },{
         "x": "1612",
-        "y": "1830",
+        "y": "1840",
         "text": "武汉路",
         "line": 1,
         "className": "station"
     },{
         "x": "1700",
-        "y": "1830",
+        "y": "1840",
         "text": "天府公园",
         "line": 1,
         "className": "station"
     },{
         "x": "1812",
-        "y": "1830",
+        "y": "1840",
         "text": "西博城",
         "line": 1,
         "className": "station"
     },{
         "x": "1912",
-        "y": "1830",
+        "y": "1840",
         "text": "广州路",
         "line": 1,
         "className": "station"
     },{
         "x": "2012",
-        "y": "1830",
+        "y": "1840",
         "text": "兴隆湖",
         "line": 1,
         "className": "station"
     },{
         "x": "2112",
-        "y": "1830",
+        "y": "1840",
         "text": "科学城",
         "line": 1,
         "className": "station"
     },{
         "x": "1125",
-        "y": "1740",
+        "y": "1725",
         "text": "广都",
         "line": 1,
         "className": "station"
     },{
         "x": "1225",
-        "y": "1740",
+        "y": "1725",
         "text": "五根松",
         "line": 1,
         "className": "station"

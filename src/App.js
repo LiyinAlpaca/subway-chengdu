@@ -5,10 +5,10 @@ import './App.css';
 
 class App extends Component {
   componentDidMount() {
-    //禁用移动设备滚动
-    // document.body.addEventListener('touchmove', function (event) {
-    //   event.preventDefault();
-    // }, false); 
+    // 禁用移动设备滚动
+    document.body.addEventListener('touchmove', function (event) {
+      event.preventDefault();
+    }, false); 
   }
   render() {
 
