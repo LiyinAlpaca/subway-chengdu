@@ -47,10 +47,8 @@ export default class InfoCard extends React.Component {
                     </button>
                 </div>
                 <div className="panel-body">
-                    <div className="btn-group" role="group" aria-label="...">
-                        <button type="button" className="btn btn-default" onClick={this.handleStaionStartChange}>设为起始站</button>
-                        <button type="button" className="btn btn-default" onClick={this.handleStaionEndChange} >设为终点站</button>
-                    </div>
+                    <button type="button" className="btn btn-default" onClick={this.handleStaionStartChange}>设为起始站</button>
+                    <button type="button" className="btn btn-default" onClick={this.handleStaionEndChange} >设为终点站</button>
                 </div>
             </div>
         )

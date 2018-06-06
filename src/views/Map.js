@@ -25,7 +25,9 @@ class Map extends React.Component {
       svg: {
         scale: 1,
         x: 0,
-        y: 0
+        y: 0,
+        orginX: 0,
+        orginY: 0
       },
       lineStart: $_get("lineStart") || 1,
       lineEnd: $_get("lineEnd") || 1,
@@ -120,18 +122,19 @@ class Map extends React.Component {
 
 
   handlePinch(e) {
-    //缩放触控
+    //缩放触控 取中心点计算transform-origin 取scale计算缩放比例
     let scale = (e.scale + this.state.svg.scale) / 2;
     let x = this.state.svg.x;
     let y = this.state.svg.y;
+    let orginX = (e.touches[0].pageX + e.touches[1].pageX) / 2;
+    let orginY = (e.touches[0].pageY + e.touches[1].pageY) / 2;
 
     if (scale > 5) {
       scale = 5
     } else if (scale < 0.5) {
       scale = 0.5
     }
-
-    this.setState({ svg: { scale, x, y } });
+    this.setState({ svg: { scale, x, y, orginX, orginY } });
   }
 
   handlePressMove(e) {
@@ -139,7 +142,19 @@ class Map extends React.Component {
     let scale = this.state.svg.scale;
     let x = this.state.svg.x + e.deltaX;
     let y = this.state.svg.y + e.deltaY;
-    this.setState({ svg: { scale, x, y } });
+    let orginX = e.touches[0].pageX;
+    let orginY = e.touches[0].pageY;
+    if (x > 1000) {
+      x = 1000
+    } else if (x < 0) {
+      x = 0
+    }
+    if (y > 1000) {
+      y = 1000
+    } else if (y < 0) {
+      y = 0
+    }
+    this.setState({ svg: { scale, x, y, orginX, orginY } });
   }
   render() {
     let svgStyle = {
@@ -148,6 +163,9 @@ class Map extends React.Component {
         + 'translate('
         + this.state.svg.x + 'px,'
         + this.state.svg.y + 'px)',
+      'transform-origin':
+        + this.state.svg.orginX + 'px,'
+        + this.state.svg.orginY + 'px'
     }
     return (
       <div className="map">

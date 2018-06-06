@@ -15,8 +15,8 @@ class Line extends React.Component {
     const stations = document.getElementsByClassName('station');
     const labels = document.getElementsByClassName('label');
 
-    const fadeStyle = "opacity : .1; pointer-events : none;"
-    const fcousStyle = "opacity : 1"
+    const fadeStyle = "opacity : .1; pointer-events : none;";
+    const fcousStyle = "opacity : 1";
 
     for (let i = 0; i < lines.length; i++) {
       lines[i].style.cssText = fadeStyle;
