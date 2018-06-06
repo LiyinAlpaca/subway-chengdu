@@ -21,9 +21,7 @@ class SelcetLine extends React.Component {
                 <option value={line.id} key={line.id}>{line.chinese} </option>
         );
         return (
-            <label>线路:
-                        <select className="form-control" name={this.props.name} value={this.props.line} onChange={this.handleChange}>{options}</select>
-            </label>
+            <select className="form-control" name={this.props.name} value={this.props.line} onChange={this.handleChange}>{options}</select>
         )
     }
 }
@@ -40,11 +38,9 @@ class SelcetStation extends React.Component {
     render() {
         const options = this.props.stations.map((station, index) => <option value={station} key={index}>{station}</option>);
         return (
-            <label>站点:
-                        <select className="form-control" name={this.props.name} value={this.props.station} onChange={this.handleChange}>
-                    {options}
-                </select>
-            </label>
+            <select className="form-control" name={this.props.name} value={this.props.station} onChange={this.handleChange}>
+                {options}
+            </select>
         )
     }
 }
@@ -92,16 +88,16 @@ export default class SubwayForm extends React.Component {
         return (
             <div className="form-subway">
                 <form className=" form-inline bg-info" action="index.html" method="get">
-                    <code>起始站</code>
+                    <label>起始站</label>
                     <SelcetLine onLineChange={this.handleLineStartChange} name="lineStart" line={this.props.lineStart} />
                     <SelcetStation onStaionChange={this.handleStaionStartChange} name="stationStart" stations={lineStartStations} station={this.props.stationStart} />
-                    <br />                    
-                    <code>终点站</code>
+                    <br />
+                    <label>终点站</label>
                     <SelcetLine onLineChange={this.handleLineEndChange} name="lineEnd" line={this.props.lineEnd} />
                     <SelcetStation onStaionChange={this.handleStaionEndChange} name="stationEnd" stations={lineEndStaions} station={this.props.stationEnd} />
-                    <br />                    
+                    <br />
                     {text}
-                    <input className="btn btn-info" type="submit" />                                                        
+                    <input className="btn btn-info" type="submit" />
                 </form>
             </div>
         )

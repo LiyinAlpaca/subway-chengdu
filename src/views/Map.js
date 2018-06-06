@@ -51,11 +51,10 @@ class Map extends React.Component {
 
   handleToDefault(e) {
     //双击后 回复svg的初始状态
-    const lines = document.getElementsByClassName('line');
-    const stations = document.getElementsByClassName('station');
-    const labels = document.getElementsByClassName('label');
-
-    const linesStyle = "opacity : 1;event-pointers : none";
+    let lines = document.getElementsByClassName('line'),
+      stations = document.getElementsByClassName('station'),
+      labels = document.getElementsByClassName('label'),
+      linesStyle = "opacity : 1;event-pointers : none";
 
     for (let i = 0; i < lines.length; i++) {
       lines[i].style.cssText = linesStyle;
@@ -85,9 +84,7 @@ class Map extends React.Component {
 
   handleStaionFocusChange(e) {
     //Staion点击时获取坐标,显示InfoCard
-    const x = e.pageX;
-    const y = e.pageY;
-    const name = e.target.id;
+    let [x, y, name] = [e.pageX, e.pageY, e.target.id];
 
     this.setState({
       infoCard: {
@@ -110,24 +107,24 @@ class Map extends React.Component {
 
   handleStaionStartChange(e) {
     //更新表单值 -- 获取表单值||获取上一个点击的站点
-    let staion = e.target.value || this.state.infoCard.stationName;
-    this.setState({ stationStart: staion })
+    let station = e.target.value || this.state.infoCard.stationName;
+    this.setState({ stationStart: station })
   }
 
   handleStaionEndChange(e) {
     //更新表单值
-    let staion = e.target.value || this.state.infoCard.stationName;
-    this.setState({ stationEnd: staion })
+    let station = e.target.value || this.state.infoCard.stationName;
+    this.setState({ stationEnd: station })
   }
 
 
   handlePinch(e) {
     //缩放触控 取中心点计算transform-origin 取scale计算缩放比例
-    let scale = (e.scale + this.state.svg.scale) / 2;
-    let x = this.state.svg.x;
-    let y = this.state.svg.y;
-    let orginX = (e.touches[0].pageX + e.touches[1].pageX) / 2;
-    let orginY = (e.touches[0].pageY + e.touches[1].pageY) / 2;
+    let scale = (e.scale + this.state.svg.scale) / 2,
+      x = this.state.svg.x,
+      y = this.state.svg.y,
+      orginX = (e.touches[0].pageX + e.touches[1].pageX) / 2,
+      orginY = (e.touches[0].pageY + e.touches[1].pageY) / 2;
 
     if (scale > 5) {
       scale = 5
@@ -139,11 +136,11 @@ class Map extends React.Component {
 
   handlePressMove(e) {
     //拖拽触控
-    let scale = this.state.svg.scale;
-    let x = this.state.svg.x + e.deltaX;
-    let y = this.state.svg.y + e.deltaY;
-    let orginX = e.touches[0].pageX;
-    let orginY = e.touches[0].pageY;
+    let scale = this.state.svg.scale,
+      x = this.state.svg.x + e.deltaX,
+      y = this.state.svg.y + e.deltaY,
+      orginX = e.touches[0].pageX,
+      orginY = e.touches[0].pageY;
     if (x > 1000) {
       x = 1000
     } else if (x < 0) {
@@ -159,13 +156,9 @@ class Map extends React.Component {
   render() {
     let svgStyle = {
       'transform':
-        'scale(' + this.state.svg.scale + ') '
-        + 'translate('
-        + this.state.svg.x + 'px,'
-        + this.state.svg.y + 'px)',
-      'transform-origin':
-        + this.state.svg.orginX + 'px,'
-        + this.state.svg.orginY + 'px'
+        `scale(${this.state.svg.scale}) translate(${this.state.svg.x}px,${this.state.svg.y}px)`,
+      'transformOrigin':
+        `${this.state.svg.orginX}px,${this.state.svg.orginY}px`
     }
     return (
       <div className="map">

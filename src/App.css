@@ -37,4 +37,12 @@
         width: 1000px;
         height: 1000px;
     }
+    .form-subway label{
+        width: 100%;
+        float: left;
+    }
+    .form-subway .form-control{
+        width: 50%;
+        float: left;
+    }
 }
